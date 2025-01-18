@@ -18,4 +18,4 @@ jobs:
 
       - name: Conditional step
         run: echo "This thime value of b is ${{ matrix.b }}"
-        if: '${{ matrix.b }}' == 'y'
+        if: ${{ matrix.b == 'y' }}
