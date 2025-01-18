@@ -1,0 +1,295 @@
+Bash practice problems:
+
+1. Word Count
+Write a Bash script that takes a sentence as input and counts the occurrence of each word in that sentence. Store the results in an associative array and print the word counts.
+Example Input:
+bash
+Copy code
+please pass sentence sentence please
+Example Output:
+bash
+Copy code
+please : 2
+pass : 1
+sentence : 2
+
+2. Reverse a String
+Write a Bash script that takes a string as input and prints it in reverse order.
+Example Input:
+bash
+Copy code
+hello
+Example Output:
+bash
+Copy code
+olleh
+
+3. Prime Number Checker
+Write a Bash script that takes a number as input and checks if it is prime.
+Example Input:
+bash
+Copy code
+7
+Example Output:
+bash
+Copy code
+7 is a prime number
+
+4. Find Largest Number in an Array
+Write a Bash script that finds the largest number in an array of integers.
+Example Input:
+bash
+Copy code
+numbers=(3 5 9 1 7 2)
+Example Output:
+bash
+Copy code
+Largest number: 9
+
+5. Count Lines, Words, and Characters in a File
+Write a Bash script that takes a file as input and prints the number of lines, words, and characters in the file.
+Example Input:
+bash
+Copy code
+file.txt
+Example Output:
+bash
+Copy code
+Lines: 10
+Words: 50
+Characters: 200
+
+6. Check if a File is Empty
+Write a Bash script that checks whether a file is empty or not.
+Example Input:
+bash
+Copy code
+file.txt
+Example Output:
+bash
+Copy code
+The file is empty.
+or
+bash
+Copy code
+The file is not empty.
+
+7. Sum of Digits in a Number
+Write a Bash script that takes a number as input and calculates the sum of its digits.
+Example Input:
+bash
+Copy code
+123
+Example Output:
+bash
+Copy code
+Sum of digits: 6
+
+8. Remove Duplicate Words from a Sentence
+Write a Bash script that takes a sentence as input and removes duplicate words, preserving their order.
+Example Input:
+bash
+Copy code
+this is a test is this a test
+Example Output:
+bash
+Copy code
+this is a test
+
+9. Find All Files of a Specific Type
+Write a Bash script that searches for all files with a specific extension (e.g., .txt) in a directory and its subdirectories.
+Example Input:
+bash
+Copy code
+search_files /home/user *.txt
+Example Output:
+bash
+Copy code
+/home/user/file1.txt
+/home/user/docs/file2.txt
+
+10. Remove Leading and Trailing Whitespaces
+Write a Bash script that removes leading and trailing whitespaces from a string.
+Example Input:
+bash
+Copy code
+   hello world
+Example Output:
+bash
+Copy code
+hello world
+
+11. Check if a String is Palindrome
+Write a Bash script that takes a string as input and checks if it is a palindrome (reads the same forward and backward).
+Example Input:
+bash
+Copy code
+madam
+Example Output:
+bash
+Copy code
+madam is a palindrome
+
+12. Create a Backup of a File
+Write a Bash script that takes a filename as input and creates a backup of that file by appending the current date to the filename.
+Example Input:
+bash
+Copy code
+myfile.txt
+Example Output:
+bash
+Copy code
+myfile.txt -> myfile.txt_2025-01-14
+
+13. Find the Number of Occurrences of a Word in a File
+Write a Bash script that takes a file and a word as input and counts how many times the word appears in the file.
+Example Input:
+bash
+Copy code
+word_count file.txt hello
+Example Output:
+bash
+Copy code
+The word 'hello' appears 3 times in file.txt
+
+14. Calculate Factorial of a Number
+Write a Bash script to calculate the factorial of a given number using both a loop and a recursive function.
+Example Input:
+bash
+Copy code
+5
+Example Output:
+bash
+Copy code
+Factorial of 5 is 120
+
+15. Remove Empty Directories
+Write a Bash script that takes a directory path as input and removes all empty directories within that directory.
+Example Input:
+bash
+Copy code
+clean_empty_dirs /home/user/docs
+Example Output:
+bash
+Copy code
+Removed empty directory: /home/user/docs/emptydir1
+
+16. List All Files Modified in the Last 24 Hours
+Write a Bash script that lists all files in a directory that have been modified in the last 24 hours.
+Example Input:
+bash
+Copy code
+list_recent_files /home/user/docs
+Example Output:
+bash
+Copy code
+/home/user/docs/file1.txt
+/home/user/docs/file2.txt
+
+17. Sort a List of Numbers
+Write a Bash script that takes a list of numbers as input and sorts them in ascending order.
+Example Input:
+bash
+Copy code
+numbers=(5 2 9 1 7)
+Example Output:
+bash
+Copy code
+1 2 5 7 9
+
+18. Convert a Temperature from Celsius to Fahrenheit
+Write a Bash script that takes a temperature in Celsius as input and converts it to Fahrenheit.
+Example Input:
+bash
+Copy code
+25
+Example Output:
+bash
+Copy code
+25°C = 77°F
+
+19. Display the First N Lines of a File
+Write a Bash script that takes a file and a number N as input, and displays the first N lines of the file.
+Example Input:
+bash
+Copy code
+first_n_lines file.txt 5
+Example Output:
+bash
+Copy code
+Line 1: Hello
+Line 2: World
+Line 3: How
+Line 4: Are
+Line 5: You
+
+20. Check Disk Usage and Send Alert
+Write a Bash script that checks if the disk usage on a system exceeds a certain threshold (e.g., 80%) and sends an alert.
+Example Input:
+bash
+Copy code
+check_disk_usage 80
+Example Output:
+bash
+Copy code
+Warning: Disk usage is over 80%! Current usage: 85%
+
+21. How do you find all files in a directory and its subdirectories that contain the word "error"?
+
+22. How would you extract the first and third columns from a text file using `awk`?
+
+23. How do you count the number of lines in a file that contain a specific pattern using `grep`?
+
+24. What command would you use to search for a pattern in a file but ignore case sensitivity?
+
+25. How would you use `sed` to replace all occurrences of "apple" with "orange" in a file?
+
+26. How can you list all files in a directory that are modified in the last 7 days?
+
+27. How do you recursively find all `.txt` files in a directory and count the number of occurrences of a word inside those files?
+
+28. How do you remove all empty lines from a file using `sed`?
+
+29. How do you display the top 5 largest files in a directory using `find` and `du`?
+
+30. What command would you use to display all lines from a file that don't match a specific pattern?
+
+31. How do you display the last 10 lines of a file in real-time as it grows?
+
+32. How would you use `awk` to print only the second column from a CSV file?
+
+33. How do you change the permissions of all files in a directory to `755` using `chmod`?
+
+34. How would you search for a word in multiple files using `grep` and display the filename along with the line number?
+
+35. How do you search for all files in a directory that contain the string "confidential" using `grep`?
+
+36. How do you use `find` to search for files in a directory that were modified more than 30 days ago?
+
+37. What command would you use to remove all files with the `.bak` extension from a directory?
+
+38. How do you append the output of one command to a file using `>>`?
+
+39. How do you replace all instances of a word in a file but save the output to a new file using `sed`?
+
+40. How would you display all lines from a file that match a pattern using `grep`?
+
+41. How do you find files in a directory with a specific size using `find`?
+
+42. How do you rename multiple files in a directory by adding a prefix using `rename`?
+
+43. How do you display all unique words from a text file using `awk`?
+
+44. What command would you use to search for all files that were accessed more than 10 days ago?
+
+45. How would you replace all spaces with a comma in a file using `sed`?
+
+46. How would you display the contents of a file in reverse order using `tac`?
+
+47. How do you display the first 20 lines of a file using `head`?
+
+48. How would you use `grep` to search for multiple patterns in a file?
+
+49. How do you find the number of directories in a given path using `find`?
+
+50. How would you use `awk` to sum all numbers in a specific column of a file?
