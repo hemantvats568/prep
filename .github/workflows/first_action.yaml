@@ -14,8 +14,8 @@ jobs:
         b: ["x","y","z"]
     steps:
       - name: step ${{ matrix.a }}
-        run: This is step ${{ matrix.a }} X ${{ matrix.b }}
+        run: echo "This is step ${{ matrix.a }} X ${{ matrix.b }}"
 
       - name: Conditional step
-        run: This thime value of b is ${{ matrix.b }}
+        run: echo "This thime value of b is ${{ matrix.b }}"
         if: ${{ '${{ matrix.b }}' == 'y' }}
