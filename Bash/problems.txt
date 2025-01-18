@@ -233,3 +233,63 @@ Example Output:
 bash
 Copy code
 Warning: Disk usage is over 80%! Current usage: 85%
+
+21. How do you find all files in a directory and its subdirectories that contain the word "error"?
+
+22. How would you extract the first and third columns from a text file using `awk`?
+
+23. How do you count the number of lines in a file that contain a specific pattern using `grep`?
+
+24. What command would you use to search for a pattern in a file but ignore case sensitivity?
+
+25. How would you use `sed` to replace all occurrences of "apple" with "orange" in a file?
+
+26. How can you list all files in a directory that are modified in the last 7 days?
+
+27. How do you recursively find all `.txt` files in a directory and count the number of occurrences of a word inside those files?
+
+28. How do you remove all empty lines from a file using `sed`?
+
+29. How do you display the top 5 largest files in a directory using `find` and `du`?
+
+30. What command would you use to display all lines from a file that don't match a specific pattern?
+
+31. How do you display the last 10 lines of a file in real-time as it grows?
+
+32. How would you use `awk` to print only the second column from a CSV file?
+
+33. How do you change the permissions of all files in a directory to `755` using `chmod`?
+
+34. How would you search for a word in multiple files using `grep` and display the filename along with the line number?
+
+35. How do you search for all files in a directory that contain the string "confidential" using `grep`?
+
+36. How do you use `find` to search for files in a directory that were modified more than 30 days ago?
+
+37. What command would you use to remove all files with the `.bak` extension from a directory?
+
+38. How do you append the output of one command to a file using `>>`?
+
+39. How do you replace all instances of a word in a file but save the output to a new file using `sed`?
+
+40. How would you display all lines from a file that match a pattern using `grep`?
+
+41. How do you find files in a directory with a specific size using `find`?
+
+42. How do you rename multiple files in a directory by adding a prefix using `rename`?
+
+43. How do you display all unique words from a text file using `awk`?
+
+44. What command would you use to search for all files that were accessed more than 10 days ago?
+
+45. How would you replace all spaces with a comma in a file using `sed`?
+
+46. How would you display the contents of a file in reverse order using `tac`?
+
+47. How do you display the first 20 lines of a file using `head`?
+
+48. How would you use `grep` to search for multiple patterns in a file?
+
+49. How do you find the number of directories in a given path using `find`?
+
+50. How would you use `awk` to sum all numbers in a specific column of a file?

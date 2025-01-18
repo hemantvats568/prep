@@ -117,3 +117,57 @@
 #
 #echo "$new_sentence"
 
+#Q9. Find All Files of a Specific Type
+#echo "please provide the extension to search for"
+#read ext
+#echo "$( ls -a  |grep $ext)"
+
+#Q10. Remove Leading and Trailing Whitespaces
+
+#echo "Please enter the string with spaces"
+#read string
+#echo "$( echo $string |xargs )" #awk can also be use. xargs without any arguments with trim spaces
+
+#Q11: Check if a String is Palindrome
+#echo "Please enter the string"
+#read string
+#ini=0
+#len=$(( $( echo $string |wc -c ) - 1 ))
+#last=len
+#until [[ $ini -ge $last ]];do
+#  if [[ "${string:$ini:1}" = "${string:$last-1:1}" ]];then
+#    ini=$(( $ini+1 ))
+#    last=$(( $last-1 ))
+#  else
+#    echo "false"
+#    exit
+#  fi
+#done
+#echo "true"
+
+#Q12: Create a Backup of a File.Write a Bash script that takes a filename as input and creates a backup of that file by appending the current date to the filename.
+#echo "Please provide the filename"
+#read filename
+#cp $filename "$filename"-"$( date -I)"
+
+#Q13: Find the Number of Occurrences of a Word in a File
+#echo "Please enter the filename"
+#read filename
+#echo "Please enter the word"
+#read word
+#echo $( cat $filename |grep -o $word |wc -l )
+
+#Q14. Calculate Factorial of a Number
+#read -p "Please enter the number: " num
+#fact=1
+#until [[ $num -eq 0 ]];do
+#  fact=$(( $num*$fact ))
+#  num=$(( $num -1 ))
+#done
+#echo "The factorial is: "$fact
+
+#Q15. Remove Empty Directories
+#read -p "Please provide path to directory to check: " dir
+#cd $dir
+#find . -type d -empty |xargs rm -rf
+
