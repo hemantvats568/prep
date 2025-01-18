@@ -1,0 +1,21 @@
+name: First action test action
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  job_first:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        a: ["1","2","3"]
+        b: ["x","y","z"]
+    steps:
+      - name: step ${{ matrix.a }}
+        run: This is step ${{ matrix.a }} X ${{ matrix.b }}
+
+      - name: Conditional step
+        run: This thime value of b is ${{ matrix.b }}
+        if: ${{ '${{ matrix.b }}' == 'y' }}
