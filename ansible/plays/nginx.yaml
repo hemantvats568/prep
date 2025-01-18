@@ -1,0 +1,51 @@
+---
+- hosts: test
+  vars:
+    server_name: "{{ ansible_default_ipv4.address }}"
+  tasks:
+    - name: Brew install nginx
+      community.general.homebrew:
+        name: nginx
+        state: present
+
+    - name: Start and enable nginx
+      command: brew services start nginx
+
+    - name: Copy website files to the server's document root
+      copy:
+        src: "{{ app_root }}"
+        dest: "{{ document_root }}"
+        mode: preserve
+
+    - name: Create a directory
+      file:
+        path: /opt/homebrew/etc/nginx/sites-available
+        state: directory
+
+    - name: Apply Nginx template
+      template:
+        src: /Users/hemantvats/projects/prep/ansible/files/nginx-config.conf.j2
+        dest: /opt/homebrew/etc/nginx/sites-available/default
+      notify: Restart Nginx
+
+    - name: Create a directory
+      file:
+        path: /opt/homebrew/etc/nginx/sites-enabled
+        state: directory
+
+    - name: Enable new site
+      file:
+        src: /opt/homebrew/etc/nginx/sites-available/default
+        dest: /opt/homebrew/etc/nginx/sites-enabled/default
+        state: link
+      notify: Restart Nginx
+
+  handlers:
+    - name: Restart Nginx
+      command: brew services restart nginx
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+[test]
+127.0.0.1 ansible_connection=local
+
+[test:vars]
+document_root=/opt/homebrew/var/www
+app_root=/Users/hemantvats/projects/prep/ansible/files/html_demo_site-main
+
+[all:vars]
+ansible_python_interpreter=/opt/homebrew/bin/python3
