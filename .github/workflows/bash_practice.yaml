@@ -1,0 +1,17 @@
+name: Practice following bash questions
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  get_practice_questions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: list questions
+        run: cat Bash/problems.txt
