@@ -248,7 +248,7 @@ Warning: Disk usage is over 80%! Current usage: 85%
 
 27. How do you recursively find all `.txt` files in a directory and count the number of occurrences of a word inside those files?
 
-28. How do you remove all empty lines from a file using `sed`?
+28. How do you remove all empty lines from a file using `sed`?                                                                                          sed '/^$/d' awk.txt
 
 29. How do you display the top 5 largest files in a directory using `find` and `du`?
 
@@ -264,7 +264,7 @@ Warning: Disk usage is over 80%! Current usage: 85%
 
 35. How do you search for all files in a directory that contain the string "confidential" using `grep`?
 
-36. How do you use `find` to search for files in a directory that were modified more than 30 days ago?
+36. How do you use `find` to search for files in a directory that were modified more than 30 days ago?         find . -type f -mtime +30
 
 37. What command would you use to remove all files with the `.bak` extension from a directory?
 
@@ -274,13 +274,13 @@ Warning: Disk usage is over 80%! Current usage: 85%
 
 40. How would you display all lines from a file that match a pattern using `grep`?
 
-41. How do you find files in a directory with a specific size using `find`?
+41. How do you find files in a directory with a specific size using `find`?                          find . -size 6M
 
 42. How do you rename multiple files in a directory by adding a prefix using `rename`?
 
-43. How do you display all unique words from a text file using `awk`?
+43. How do you display all unique words from a text file using `awk`?                                 Tough
 
-44. What command would you use to search for all files that were accessed more than 10 days ago?
+44. What command would you use to search for all files that were accessed more than 10 days ago?      find command
 
 45. How would you replace all spaces with a comma in a file using `sed`?
 
