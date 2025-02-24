@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - feature_1
+jobs:
+  my_job_1:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        var_1: ["1","2"]
+        var_2: ["a","b"]
+    steps:
+      - uses: actions/checkout@v3
+      - name: using a secret
+        run: |
+          echo "I a using a secret ${{ secrets.my_secret }} in this step"
+      - name: using strategy matrix
+        run: echo "This combinations is ${{ matrix.var_1 }} X ${{ matrix.var_2 }}"
