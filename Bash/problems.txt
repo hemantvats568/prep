@@ -59,7 +59,7 @@ Lines: 10
 Words: 50
 Characters: 200
 
-6. Check if a File is Empty
+6. Check if a File is Empty  --> [[ -s file.txt ]]
 Write a Bash script that checks whether a file is empty or not.
 Example Input:
 bash
@@ -96,19 +96,7 @@ bash
 Copy code
 this is a test
 
-9. Find All Files of a Specific Type
-Write a Bash script that searches for all files with a specific extension (e.g., .txt) in a directory and its subdirectories.
-Example Input:
-bash
-Copy code
-search_files /home/user *.txt
-Example Output:
-bash
-Copy code
-/home/user/file1.txt
-/home/user/docs/file2.txt
-
-10. Remove Leading and Trailing Whitespaces
+10. Remove Leading and Trailing Whitespaces         --> Xargs is not meant to do this purposefully but it does this by default; awk also does this
 Write a Bash script that removes leading and trailing whitespaces from a string.
 Example Input:
 bash
@@ -252,7 +240,7 @@ Warning: Disk usage is over 80%! Current usage: 85%
 
 29. How do you display the top 5 largest files in a directory using `find` and `du`?
 
-30. What command would you use to display all lines from a file that don't match a specific pattern?
+30. What command would you use to display all lines from a file that don't match a specific pattern? --> Grep, sed both can be used
 
 31. How do you display the last 10 lines of a file in real-time as it grows?
 
@@ -276,7 +264,7 @@ Warning: Disk usage is over 80%! Current usage: 85%
 
 41. How do you find files in a directory with a specific size using `find`?
 
-42. How do you rename multiple files in a directory by adding a prefix using `rename`?
+42. How do you rename multiple files in a directory by adding a prefix using `rename`? --> not a standard command
 
 43. How do you display all unique words from a text file using `awk`?
 
