@@ -58,7 +58,7 @@ def twooddoccur(n):
     res1=0
     res2=0
     for i in n:
-        if k^i==0:
+        if k&i==0:
             res1=res1^i
         else:
             res2=res2^i
