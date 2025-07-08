@@ -211,8 +211,8 @@ Line 3: How
 Line 4: Are
 Line 5: You
 
-20. Check Disk Usage and Send Alert
-Write a Bash script that checks if the disk usage on a system exceeds a certain threshold (e.g., 80%) and sends an alert.
+20. Check Disk Usage
+Write a Bash script that checks if the disk usage on a system exceeds a certain threshold (e.g., 80%)
 Example Input:
 bash
 Copy code
@@ -221,6 +221,11 @@ Example Output:
 bash
 Copy code
 Warning: Disk usage is over 80%! Current usage: 85%
+
+''' NOTE: lsblk is for disk and partition info. df command is for filesystem size. If we increase the aws ebs size from 16 gb to 32 gb
+ and do lsblk. The disk size will show 32 gb and partition size will only show 16 gb. Use growpart command to extend partition to
+ 32 gb. Even after this the xfs_growfs(xfs)/resize2fs(ext4) command will extend filesystem to 32 gb. du command is used to check the
+ size of directories'''
 
 21. How do you find all files in a directory and its subdirectories that contain the word "error"?
 
@@ -232,8 +237,6 @@ Warning: Disk usage is over 80%! Current usage: 85%
 
 25. How would you use `sed` to replace all occurrences of "apple" with "orange" in a file?
 
-26. How can you list all files in a directory that are modified in the last 7 days?
-
 27. How do you recursively find all `.txt` files in a directory and count the number of occurrences of a word inside those files?
 
 28. How do you remove all empty lines from a file using `sed`?
@@ -244,7 +247,7 @@ Warning: Disk usage is over 80%! Current usage: 85%
 
 31. How do you display the last 10 lines of a file in real-time as it grows?
 
-32. How would you use `awk` to print only the second column from a CSV file?
+32. How would you use `awk` to print only the second column from a CSV file? --> -F, to set , as field separator
 
 33. How do you change the permissions of all files in a directory to `755` using `chmod`?
 
@@ -271,8 +274,6 @@ Warning: Disk usage is over 80%! Current usage: 85%
 44. What command would you use to search for all files that were accessed more than 10 days ago?
 
 45. How would you replace all spaces with a comma in a file using `sed`?
-
-46. How would you display the contents of a file in reverse order using `tac`?
 
 47. How do you display the first 20 lines of a file using `head`?
 
