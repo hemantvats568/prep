@@ -47,7 +47,7 @@ def countfactzeros(n):
     return count
 '''
 '''
-HCF of two numbers: We can use euclidean algorithm which says hcf(a,b) = hcf(a,b,a-b = hcf(a,b,a%b) if a>b.
+HCF of two numbers: We can use euclidean algorithm which says hcf(a,b) = hcf(a,b,a-b) = hcf(a,b,a%b) if a>b.
 
 def hcf(a,b):
     if b==0:
@@ -61,6 +61,19 @@ LCM of two numbers: Same as above find gcd and use lcm*hcf= product of numbers
 
 '''
 Check for prime: Check if a number is prime or not. Keep in mind the optimization below
+After 2 and 3, all primes are of the form 6k ± 1.
+Every integer can be expressed as one of:
+    6k (divisible by 6)
+    6k ± 1
+    6k ± 2
+    6k + 3
+
+6k is divisible by 6 → not prime
+6k ± 2 is even → divisible by 2 → not prime
+6k + 3 is divisible by 3 → not prime
+
+i takes values of the form 6k - 1
+i + 2 becomes 6k + 1
 
 def checkprime(n):
     if n<=1:
