@@ -146,3 +146,8 @@ def sumnatural(n):
     return (n + sumnatural(n-1))
 '''
 
+'''
+Tail recursion: When the last thing that a function does is recursive call. So, when the child recursive call finishes the parent
+does not have anything else to do. Modern compilers do tail call elimination. This makes execution faster. EG: Quick sort is tail
+recursive whereas merge sort is not.
+'''

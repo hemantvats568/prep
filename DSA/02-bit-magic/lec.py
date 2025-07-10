@@ -48,7 +48,7 @@ x&(~(x-1)) gives a number which has only last set bit of x.
 We will xor all elements. This xor will be an xor of two odd occuring elements.Only one of the two numbers will have 
 the last set bit same as the last set bit of the xor as xor would have unset it if both numbers had it set.and generate
  a number k which will have only last set bit from the xor of all elements. Now we will take xor of only those numbers 
- that has last set bit as k and another xor of nubers that don't have last set bit as k. This will result in two numbers.
+ that has last set bit as k and another xor of numbers that don't have last set bit as k. This will result in two numbers.
 
 def twooddoccur(n):
     res = n[0]
