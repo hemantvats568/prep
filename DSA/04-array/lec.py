@@ -314,3 +314,186 @@ def longestEvenOdd(a):
 print (longestEvenOdd(a))
 '''
 
+'''
+Maximum circular sum
+
+a=[5,-6,-3,4]
+
+def maxSum(a): #kadanes
+    i=1
+    e=len(a)-1
+    res=a[0]
+    currMax=a[0]
+    while i<=e:
+        currMax+=a[i]
+        if currMax<a[i]:
+            currMax=a[i]
+        if res<currMax:
+            res=currMax
+        i+=1
+    return res
+
+def maxCircSum(a):
+    totalSum=0
+    for i in range(len(a)):
+        totalSum+=a[i]
+
+    simpleMaxSum=maxSum(a)
+
+    for i in range(len(a)):
+        a[i]=-a[i]
+
+    minSum=-maxSum(a)
+    maxSumCirc = totalSum-minSum
+
+    circularSum=max(simpleMaxSum,maxSumCirc)
+
+    return circularSum
+
+print(maxCircSum(a))
+'''
+
+'''
+Majority element in the array : if element occurs atleast n/2+1 times where n= number of elements in array
+a=[6,8,4,8,8,9,8,8]
+
+def majEle(a):
+    count=1
+    res=a[0]
+
+    for i in range(1,len(a)):
+        if a[i]==res:
+            count+=1
+        else:
+            count-=1
+        if count==0:
+            count=1
+            res=a[i]
+
+
+    checking=0
+    for i in range(len(a)):
+        if a[i]==res:
+            checking+=1
+
+
+    if checking>len(a)//2:
+        return res
+    else:
+        return None
+
+
+print(majEle(a))
+'''
+
+'''
+Minimum consecutive flips: Given a binary array, we need to flip elements to make all elements same. All consecutive same
+numbers can be flipped in one go.
+
+a=[1,0,1,0,0,0,1,0,0,1,1,1,1,0]
+
+# In a binary array the starting digit will be occuring more times than the other digit
+
+def minFlips(a):
+    count=0
+    fele=a[0]
+
+    for i in range(1,len(a)):
+        if a[i]!=fele and a[i]!=a[i-1]:
+            count+=1
+
+    return count
+
+print(minFlips(a))
+'''
+
+'''
+Subarray with given sum in an array:
+a=[1,4,20,3,10,6]
+gs=39
+
+def subGivenSum(a,gs):
+    i=0
+    e=0
+    l=len(a)-1
+    currSum=a[i]
+    while e<=l:
+        if currSum<gs:
+            e+=1
+            currSum+=a[e]
+        if currSum>gs:
+            currSum-=a[i]
+            i+=1
+        if currSum==gs:
+            print(i,e)
+            return
+
+print(subGivenSum(a,gs))
+'''
+
+'''
+Prefix sum: given multiple queries to get sum of elements from l to r getSum(l,r).
+a=[6,7,3,55,4,9]
+
+ps=[None]*len(a)
+
+sum=0
+for i in range(len(a)):
+    sum+=a[i]
+    ps[i]=sum
+
+def getSum(l,r):
+    if l==0:
+        return ps[r]
+    return ps[r]-ps[l-1]
+
+print(ps)
+print(getSum(0,3))
+print(getSum(2,3))
+'''
+
+'''
+Equilibrium point
+a=[3,4,8,-9,20,6]
+
+def eqPoint(a):
+    tsum=0
+    for i in a:
+        tsum+=i
+
+    rsum=tsum-a[0]
+    lsum=0
+
+    for i in range(1,len(a)):
+        lsum+=a[i-1]
+        rsum-=a[i]
+
+        if lsum==rsum:
+            return a[i]
+    return None
+
+print(eqPoint(a))
+'''
+
+'''
+Maximum appering element in range:
+left=[1,2,4]
+right=[4,5,7]
+max=100
+def maxAppear(l,r,max):
+    freq=[0]*max
+    pfreq=[0]*max
+    for i in range(len(l)):
+        freq[left[i]]=1
+        freq[right[i]+1]=-1
+
+    max=0
+    for j in range(1,len(freq)):
+        pfreq[j]=pfreq[j-1]+freq[j]
+        if pfreq[max]<pfreq[j]:
+            max=j
+    return max-1
+
+
+print(maxAppear(left,right,max))
+'''
