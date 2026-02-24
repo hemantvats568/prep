@@ -1,0 +1,2 @@
+* Resource: Read the "Virtualization" section of Operating Systems: Three Easy Pieces (Free).
+* https://www.youtube.com/watch?v=RxLJvh-nzQ8&list=PLhtZD20ADU45ADsAIxlNpFowP3iYvGXvJ&index=4   —> Operating Systems: Three Easy Pieces
