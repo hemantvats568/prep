@@ -1,0 +1,99 @@
+What is the fundamental difference between a Docker Image and a Docker Container?
+
+What is the difference between CMD and ENTRYPOINT in a Dockerfile?
+
+What are Multi-Stage builds and why are they used in production?
+
+When should you use the ADD instruction instead of the COPY instruction?
+
+How does Docker's layer caching work and how do you optimize it?
+
+What is the difference between a Volume and a Bind Mount?
+
+What is the purpose of a .dockerignore file?
+
+Explain the difference between bridge and host networking modes.
+
+What is the technical difference between docker stop and docker kill?
+
+Which command do you use to inspect the metadata and IP address of a container?
+
+What is the difference between docker-compose up and docker-compose start?
+
+How do you ensure a container is "Ready" and not just "Running" using depends_on?
+
+How do you allow a container to access the host's NVIDIA GPU?
+
+Why is it a security risk to run an application as the root user inside a container?
+
+How do you increase the shared memory size (/dev/shm) for AI workloads?
+
+How does service discovery work between containers in the same docker-compose file?
+
+What is the order of precedence for environment variables in Docker-Compose?
+
+How do you automate vulnerability scanning for Docker images in a CI/CD pipeline?
+
+What is the purpose of a docker-compose.override.yml file?
+
+Why should you use the "exec" command in a shell script used as an ENTRYPOINT?
+
+How do you prevent a container from consuming all host RAM and CPU?
+
+What is a Docker Storage Driver and why is overlay2 the preferred standard?
+
+When would you choose a Macvlan network over a standard Bridge network?
+
+What is the difference between docker system prune and docker image rm?
+
+Why is mounting /var/run/docker.sock considered a major security vulnerability?
+
+Why is the Docker Secrets directive safer than using environment variables for passwords?
+
+How do you change the Docker logging driver to ship logs to CloudWatch or ELK?
+
+How do you build a single Docker image for multiple architectures (ARM and AMD64)?
+
+What is the purpose of the --init flag and how does it prevent zombie processes?
+
+How do you use the --format flag to extract specific strings from docker inspect?
+
+How do you troubleshoot network connectivity in a "distroless" container without tools?
+
+What causes "Bus errors" in Docker AI pipelines and how is it fixed?
+
+What is a Docker Registry "Pull-Through Cache" and why is it useful?
+
+Explain "Inode Exhaustion" and how it affects the Overlay2 storage driver.
+
+How do you handle configuration drift between Dev and Prod using Docker-Compose?
+
+How do you optimize image distribution for a cluster with over 1,000 nodes?
+
+What is the difference between COPY and COPY --link in BuildKit?
+
+When and why should you use 'tini' as an init process in your container?
+
+How do you use BuildKit secrets to pass SSH keys during the build phase?
+
+What are the performance benefits of using Macvlan for high-throughput applications?
+
+What are the primary architectural reasons to choose Docker Swarm over Kubernetes?
+
+How do you perform a zero-downtime Blue-Green deployment with Docker Compose?
+
+What is Docker Content Trust and how does it ensure image integrity?
+
+Describe the Sidecar Pattern and give an example of its use in Docker Compose.
+
+How do you automate the backup of a Docker Volume without stopping the container?
+
+What is "Rootless Docker" and how does it improve host security?
+
+How do you automate the cleanup of orphaned volumes in a high-churn environment?
+
+How do you export and share BuildKit cache via a remote Docker Registry?
+
+How do you implement multi-tenancy and isolation on a shared Docker host?
+
+What are the criteria for choosing between Vertical Scaling and Horizontal Scaling for containers?

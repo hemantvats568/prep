@@ -1,0 +1,16 @@
+services:
+  nginx_1:
+    image: "alpine:custom"
+    ports:
+      - 8090:80
+    volumes:
+      - vol_1:/etc/nginx
+  nginx_2:
+    image: "alpine:custom"
+    ports:
+      - 9090:80
+    volumes:
+      - vol_2:/etc/nginx
+volumes:
+  vol_1:
+  vol_2:

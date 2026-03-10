@@ -1,0 +1,100 @@
+Docker & Docker-Compose Interview Answers
+Image vs Container: An image is a read-only blueprint; a container is a running, writable instance of that blueprint.
+
+CMD vs ENTRYPOINT: ENTRYPOINT sets the permanent executable, while CMD provides default arguments that can be easily overridden.
+
+Multi-Stage Builds: They use intermediate containers to compile code, leaving only the final binary in the production image to minimize size and attack surface.
+
+ADD vs COPY: Use COPY for basic file transfers; use ADD only when you need to auto-extract local tar files or fetch remote URLs.
+
+Layer Caching: Docker reuses unchanged layers; optimize by placing frequently changing instructions (like COPY . .) at the bottom of the Dockerfile.
+
+Volumes vs Bind Mounts: Volumes are managed by Docker for persistence; Bind Mounts map a specific host path to the container and depend on host structure.
+
+.dockerignore: It prevents heavy or sensitive files (like .git or node_modules) from being sent to the build context, speeding up builds.
+
+Bridge vs Host Network: Bridge provides an isolated network via NAT; Host removes isolation so the container uses the host's IP and ports directly.
+
+Stop vs Kill: docker stop sends SIGTERM for a graceful shutdown; docker kill sends SIGKILL for immediate termination.
+
+Inspecting Metadata: Use docker inspect <container_id> to see the full JSON configuration, including IPs and environment variables.
+
+Up vs Start: up creates/recreates and starts containers based on the YAML; start only resumes existing, stopped containers.
+
+Ready vs Running: Use depends_on with the service_healthy condition linked to a specific healthcheck defined in the dependency container.
+
+NVIDIA GPU Access: Install the NVIDIA Container Toolkit on the host and use the --gpus all flag or the Compose reservations block.
+
+Root Security Risk: Running as root allows container-breakout exploits to potentially gain full administrative control over the host machine.
+
+Shared Memory Size: Set --shm-size (e.g., 2gb) to prevent "Bus errors" in AI frameworks that use /dev/shm for data loading.
+
+Service Discovery: Docker-Compose creates a shared network where containers resolve each other using their service names as hostnames.
+
+Variable Precedence: The hierarchy is: Shell environment > Compose YAML environment > .env file.
+
+Vulnerability Scanning: Integrate tools like Docker Scout, Trivy, or Snyk into CI/CD to break the build if critical CVEs are detected.
+
+Override.yml: It is automatically merged with the base YAML to apply environment-specific settings (like local mounts) without changing the main file.
+
+Exec in Entrypoint: Using exec replaces the shell process with the application process, allowing the app to receive termination signals directly.
+
+Resource Limits: Use the --memory and --cpus flags to cap usage and prevent a single container from starving the host.
+
+Storage Drivers: Drivers manage the union filesystem; overlay2 is preferred for its high performance and efficient inode usage.
+
+Macvlan vs Bridge: Choose Macvlan when a container needs its own MAC address and must appear as a physical device on the host's subnet.
+
+Prune vs Image RM: prune removes all unused/dangling resources at once; image rm deletes specific images by ID or name.
+
+Docker Socket Risk: Mounting /var/run/docker.sock gives a container full control over the host's Docker daemon, enabling total host takeover.
+
+Secrets vs Env: Secrets are mounted as in-memory files at /run/secrets/, preventing sensitive data from appearing in logs or docker inspect.
+
+Logging Drivers: Use the --log-driver flag (e.g., awslogs, fluentd, or gelf) to stream logs to central collectors instead of local JSON files.
+
+Multi-Arch Builds: Use docker buildx build --platform linux/amd64,linux/arm64 to create a manifest that works on both Intel and Apple Silicon/Graviton.
+
+Init Flag: The --init flag uses a tiny init binary (like tini) to correctly reap zombie processes and forward signals to sub-processes.
+
+Filtering Inspect: Use docker inspect --format '{{ .NetworkSettings.IPAddress }}' to extract specific values for automation scripts.
+
+Network Troubleshooting: Use nsenter -t <PID> -n <command> on the host to run host-level tools inside the container's network namespace.
+
+Bus Errors in AI: These are caused by insufficient shared memory; fix by increasing --shm-size to match the workload's IPC requirements.
+
+Pull-Through Cache: A local registry mirror that caches images from Docker Hub to reduce bandwidth and bypass rate limits.
+
+Inode Exhaustion: This occurs when a filesystem runs out of file index entries due to millions of small files; fix by pruning unused layers.
+
+Configuration Drift: Use a base docker-compose.yml and separate environment files (e.g., docker-compose.prod.yml) to keep configurations distinct.
+
+Massive Distribution: Use P2P protocols like Dragonfly or Uber's Kraken to distribute large images across thousands of nodes simultaneously.
+
+Copy --link: This BuildKit feature copies files into independent snapshots, preventing cache invalidation even if previous layers change.
+
+Tini as Init: Use tini to handle signal forwarding and process reaping for apps that spawn many workers (like Python/Node).
+
+BuildKit Secrets: Use --mount=type=secret during build to use sensitive files (like SSH keys) without baking them into image layers.
+
+Macvlan Performance: It reduces overhead by bypassing the Linux bridge and NAT, providing lower latency for network-heavy apps.
+
+Swarm vs K8s: Swarm is chosen for its simplicity and native integration; Kubernetes for its complex orchestration and scaling capabilities.
+
+Blue-Green Deployment: Run two service versions on different ports and swap the Nginx reverse proxy target to redirect traffic instantly.
+
+Content Trust: It uses digital signatures to ensure that images pulled by production are identical to those signed and pushed by the developer.
+
+Sidecar Pattern: Running a helper container (like a log-shipper) alongside the main app to provide extra functionality without modifying the app code.
+
+Volume Backup: Run a temporary container with --volumes-from to tar the volume's data and save it to the host or S3.
+
+Rootless Docker: It runs the daemon and containers as a non-root user, significantly reducing the blast radius of a container escape.
+
+Orphaned Volume Cleanup: Use docker volume prune to delete all volumes not currently attached to at least one container.
+
+Registry Cache Export: Use --cache-to type=registry in BuildKit to share build caches across different CI nodes via a remote registry.
+
+Multi-Tenancy Isolation: Combine dedicated Docker Networks, Cgroup resource limits, and User Namespaces to isolate customers on a shared host.
+
+Vertical vs Horizontal Scaling: Scale vertically for single-process power; scale horizontally (using --scale) for stateless high availability and load balancing.
